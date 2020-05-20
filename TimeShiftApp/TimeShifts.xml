@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bellini>
+  <State>Full</State>
+  <Zone name="Blue">
+    <Rest name="Perci">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="Sib">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="Bib">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="Formaggi">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="Krem">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="Mamas">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="Yaki">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="Koko">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+    <Rest name="RB">
+      <Hour></Hour>
+      <Minute></Minute>
+      <Minrule></Minrule>
+    </Rest>
+  </Zone>
+    <Zone name="Green">
+    <bgHours>1</bgHours>
+    <bgMinutes>0</bgMinutes>
+    <bgRule>4</bgRule>
+    <rHours>1</rHours>
+    <rMinutes>10</rMinutes>
+    <rRule>4</rRule>
+    <ybHours>1</ybHours>
+    <ybMinutes>10</ybMinutes>
+    <ybRule>4</ybRule>
+    <mmHours>1</mmHours>
+    <mmMinutes>10</mmMinutes>
+    <mmRule>4</mmRule>
+  </Zone>
+  <Zone name="LightGreen">
+    <bgHours>1</bgHours>
+    <bgMinutes>0</bgMinutes>
+    <bgRule>4</bgRule>
+    <rHours>1</rHours>
+    <rMinutes>10</rMinutes>
+    <rRule>4</rRule>
+    <ybHours>1</ybHours>
+    <ybMinutes>10</ybMinutes>
+    <ybRule>4</ybRule>
+    <mmHours>1</mmHours>
+    <mmMinutes>10</mmMinutes>
+    <mmRule>4</mmRule>
+  </Zone>
+  <Zone name="Yellow">
+    <bgHours>1</bgHours>
+    <bgMinutes>0</bgMinutes>
+    <bgRule>4</bgRule>
+    <rHours>1</rHours>
+    <rMinutes>20</rMinutes>
+    <rRule>4</rRule>
+    <ybHours>1</ybHours>
+    <ybMinutes>10</ybMinutes>
+    <ybRule>4</ybRule>
+    <mmHours>1</mmHours>
+    <mmMinutes>10</mmMinutes>
+    <mmRule>4</mmRule>
+  </Zone>
+  <Zone name="Orange">
+    <bgHours>1</bgHours>
+    <bgMinutes>10</bgMinutes>
+    <bgRule>4</bgRule>
+    <rHours>1</rHours>
+    <rMinutes>30</rMinutes>
+    <rRule>4</rRule>
+    <ybHours>1</ybHours>
+    <ybMinutes>10</ybMinutes>
+    <ybRule>4</ybRule>
+    <mmHours>1</mmHours>
+    <mmMinutes>10</mmMinutes>
+    <mmRule>4</mmRule>
+  </Zone>
+  <Zone name="Red">
+    <bgHours>1</bgHours>
+    <bgMinutes>20</bgMinutes>
+    <bgRule>4</bgRule>
+    <rHours>1</rHours>
+    <rMinutes>40</rMinutes>
+    <rRule>4</rRule>
+    <ybHours>1</ybHours>
+    <ybMinutes>10</ybMinutes>
+    <ybRule>4</ybRule>
+    <mmHours>1</mmHours>
+    <mmMinutes>10</mmMinutes>
+    <mmRule>4</mmRule>
+  </Zone>
+  <Zone name="Gray">
+    <bgHours>1</bgHours>
+    <bgMinutes>30</bgMinutes>
+    <bgRule>4</bgRule>
+    <rHours>1</rHours>
+    <rMinutes>50</rMinutes>
+    <rRule>4</rRule>
+    <ybHours>1</ybHours>
+    <ybMinutes>10</ybMinutes>
+    <ybRule>4</ybRule>
+    <mmHours>1</mmHours>
+    <mmMinutes>10</mmMinutes>
+    <mmRule>4</mmRule>
+  </Zone>
+  <WeekendFlag name="BG">
+    <Flag>0</Flag>
+  </WeekendFlag>
+  <WeekendFlag name="Rest">
+    <Flag>0</Flag>
+  </WeekendFlag>
+  <WeekendFlag name="YB">
+    <Flag>0</Flag>
+  </WeekendFlag>
+  <WeekendFlag name="Mamas">
+    <Flag>0</Flag>
+  </WeekendFlag>
+</Bellini>
