@@ -22,7 +22,8 @@ namespace TimeShiftApp
         public int panel2_statusFlag = 0,
                   form_statusFlag = 1,
                     flag = 0;
-                   
+        
+
         public string selectTimes = "Select Zone,Time from Times where Flag=1 and Zone='",
                      selectDDelays = "Select Delay from Delays where Flag=1 and Type='Доставка' and Zone='",
                      selectTADelays = "Select Delay from Delays where Flag=1 and Type='Вынос' and Zone='",
@@ -54,7 +55,7 @@ namespace TimeShiftApp
             }
         }
 
-        static string ReadS(string key)
+        public static string ReadS(string key)
         {
             try
             {
@@ -70,10 +71,19 @@ namespace TimeShiftApp
             }
             
         }
-        //Функция объеиняющая весь сбор информации по всем рестам кроме перцев
+        //Функция объединяющая весь сбор информации по всем рестам кроме перцев
         //Из-за особенностей хранения данных по Акция для Перцев не возможно передавать при нажатии на кнопку каждого ресторана Имя ресторана, потому что нужно слово 'Перцы' для всех 7 кнопок
         void GetAllInfo(object sender, string[] tParams, string oname)
         {
+            string bluez,
+                    lightgreenz,
+                    greenz,
+                    yellowz,
+                    orangez,
+                    redz,
+                    grayz;
+
+
             this.Refresh();
             dateTimePicker1.Text = DateTime.Now.ToShortDateString();
             button16.Visible = false;
@@ -104,16 +114,144 @@ namespace TimeShiftApp
             else
             {
                 delay_label.Text = "";
+
+            }
+            
+            TimeSpan timeFrom = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeFromHour")), Convert.ToInt32(Form1.ReadS("timeFromMinutes")), 0);
+            TimeSpan timeTo = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeToHour")), Convert.ToInt32(Form1.ReadS("timeToMinutes")), 0);
+            TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeAddHour")), Convert.ToInt32(Form1.ReadS("timeAddMinutes")), 0);
+
+            bluez = CalculateFinal.CalcBlueZoneTime(TZ, tParams[0], tParams[7], zname, ListTimes).Result;
+            lightgreenz = CalculateFinal.CalcZoneTime(TZ, tParams[1], tParams[7], zname, ListTimes).Result;
+            greenz = CalculateFinal.CalcZoneTime(TZ, tParams[2], tParams[7], zname, ListTimes).Result;
+            yellowz = CalculateFinal.CalcZoneTime(TZ, tParams[3], tParams[7], zname, ListTimes).Result;
+            orangez = CalculateFinal.CalcZoneTime(TZ, tParams[4], tParams[7], zname, ListTimes).Result;
+            redz = CalculateFinal.CalcZoneTime(TZ, tParams[5], tParams[7], zname, ListTimes).Result;
+            grayz = CalculateFinal.CalcZoneTime(TZ, tParams[6], tParams[7], zname, ListTimes).Result;
+
+            if (bluez != "")
+            {
+                if (TimeSpan.Parse(bluez) > timeFrom && TimeSpan.Parse(bluez) < timeTo)
+                {
+                    blueTZ.Text = TimeSpan.Parse(bluez).Add(timeAdd).ToString(@"hh\:mm");
+                }
+                else
+                {
+                    blueTZ.Text = bluez;
+                }
+            }
+            else
+            {
+                blueTZ.Text = bluez;
             }
 
-            blueTZ.Text = CalculateFinal.CalcBlueZoneTime(TZ, tParams[0], tParams[7], zname, ListTimes).Result;
-            lgreenTZ.Text = CalculateFinal.CalcZoneTime(TZ, tParams[1], tParams[7], zname, ListTimes).Result;
+            if (lightgreenz != "")
+            {
+                if (TimeSpan.Parse(lightgreenz) > timeFrom && TimeSpan.Parse(lightgreenz) < timeTo)
+                {
+                    lgreenTZ.Text = TimeSpan.Parse(lightgreenz).Add(timeAdd).ToString(@"hh\:mm");
+                }
+                else
+                {
+                    lgreenTZ.Text = lightgreenz;
+                }
+            }
+            else
+            {
+                lgreenTZ.Text = lightgreenz;
+            }
+
+            if (greenz != "")
+            {
+                if (TimeSpan.Parse(greenz) > timeFrom && TimeSpan.Parse(greenz) < timeTo)
+                {
+                    greenTZ.Text = TimeSpan.Parse(greenz).Add(timeAdd).ToString(@"hh\:mm");
+                }
+                else
+                {
+                    greenTZ.Text = greenz;
+                }
+            }
+            else
+            {
+                greenTZ.Text = greenz;
+            }
+
+            if (yellowz != "")
+            {
+                if (TimeSpan.Parse(yellowz) > timeFrom && TimeSpan.Parse(yellowz) < timeTo)
+                {
+                    yellowTZ.Text = TimeSpan.Parse(yellowz).Add(timeAdd).ToString(@"hh\:mm");
+                }
+                else
+                {
+                    yellowTZ.Text = yellowz;
+                }
+            }
+            else
+            {
+                yellowTZ.Text = yellowz;
+            }
+
+            if (orangez != "")
+            {
+                if (TimeSpan.Parse(orangez) > timeFrom && TimeSpan.Parse(orangez) < timeTo)
+                {
+                    orangeTZ.Text = TimeSpan.Parse(orangez).Add(timeAdd).ToString(@"hh\:mm");
+                }
+                else
+                {
+                    orangeTZ.Text = orangez;
+                }
+            }
+            else
+            {
+                orangeTZ.Text = orangez;
+            }
+
+            if (redz != "")
+            {
+                if (TimeSpan.Parse(redz) > timeFrom && TimeSpan.Parse(redz) < timeTo)
+                {
+                    redTZ.Text = TimeSpan.Parse(redz).Add(timeAdd).ToString(@"hh\:mm");
+                }
+                else
+                {
+                    redTZ.Text = redz;
+                }
+            }
+            else
+            {
+                redTZ.Text = redz;
+            }
+
+            if (grayz != "")
+            {
+                if (TimeSpan.Parse(grayz) > timeFrom && TimeSpan.Parse(grayz) < timeTo)
+                {
+                    grayTZ.Text = TimeSpan.Parse(grayz).Add(timeAdd).ToString(@"hh\:mm");
+                }
+                else
+                {
+                    grayTZ.Text = grayz;
+                }
+            }
+            else
+            {
+                grayTZ.Text = grayz;
+            }
+
+
+            /*blueTZ.Text = 
+            lgreenTZ.Text = 
             //lgreenTZ.Text = "";
-            greenTZ.Text = CalculateFinal.CalcZoneTime(TZ, tParams[2], tParams[7], zname, ListTimes).Result;
-            yellowTZ.Text = CalculateFinal.CalcZoneTime(TZ, tParams[3], tParams[7], zname, ListTimes).Result;
-            orangeTZ.Text = CalculateFinal.CalcZoneTime(TZ, tParams[4], tParams[7], zname, ListTimes).Result;
-            redTZ.Text = CalculateFinal.CalcZoneTime(TZ, tParams[5], tParams[7], zname, ListTimes).Result;
-            grayTZ.Text = CalculateFinal.CalcZoneTime(TZ, tParams[6], tParams[7], zname, ListTimes).Result;
+            greenTZ.Text = 
+            yellowTZ.Text = 
+            orangeTZ.Text = 
+            redTZ.Text = 
+            grayTZ.Text =*/ 
+
+
 
 
             tawayTZ.Text = CalculateFinal.CalcZoneTATime(TZ, tParams[8], tParams[9], zname).Result;

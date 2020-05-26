@@ -1,12 +1,26 @@
 ﻿using System;
 
-namespace TimeShiftApp//Функции округления времени для всех крое выносов схема (0>=n>10+n и так далее) для выносов (0>5>10)
+namespace TimeShiftApp//Функции округления времени для всех кроме выносов схема (0>=n>10+n и так далее) для выносов (0>5>10)
 {
     class TimeCalc
     {
+        //добавлен временной промежуток в который все время доставки увеличивается на 20 минут
+        public static TimeSpan timeFrom = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeFromHour")), Convert.ToInt32(Form1.ReadS("timeFromMinutes")), 0);
+        public static TimeSpan timeTo = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeToHour")), Convert.ToInt32(Form1.ReadS("timeToMinutes")), 0);
+
         public static String CalculateNear(DateTime tempTime, int h_shift, int m_shift, int n_shift)
         {
+
+            /*var timeNow = DateTime.Now.TimeOfDay;
+            if (timeFrom < timeNow && timeNow < timeTo)
+            {
+                m_shift = m_shift + Convert.ToInt32(Form1.ReadS("MinutesToAdd"));
+            }*/
+
+
+
             String TS;
+
             if (((tempTime.Minute + m_shift) >= 0) && ((tempTime.Minute + m_shift) <= n_shift))
             {
                 TS = tempTime.AddHours(h_shift).Hour.ToString() + ":00";
