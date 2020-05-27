@@ -71,6 +71,18 @@ namespace TimeShiftApp
             }
             
         }
+
+        //Convert "1:30" like strings in (90)string function
+        string ReturnMinutes(string tPar)
+        {
+            string res;
+            TimeSpan ts = new TimeSpan(Convert.ToInt32(tPar.Split(':')[0]), Convert.ToInt32(tPar.Split(':')[1]), 0);
+            res = "("+ts.TotalMinutes.ToString()+")";
+
+            return res;
+        }
+
+
         //Функция объединяющая весь сбор информации по всем рестам кроме перцев
         //Из-за особенностей хранения данных по Акция для Перцев не возможно передавать при нажатии на кнопку каждого ресторана Имя ресторана, потому что нужно слово 'Перцы' для всех 7 кнопок
         void GetAllInfo(object sender, string[] tParams, string oname)
@@ -133,11 +145,11 @@ namespace TimeShiftApp
             {
                 if (TimeSpan.Parse(bluez) > timeFrom && TimeSpan.Parse(bluez) < timeTo)
                 {
-                    blueTZ.Text = TimeSpan.Parse(bluez).Add(timeAdd).ToString(@"hh\:mm");
+                    blueTZ.Text = TimeSpan.Parse(bluez).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[0]);
                 }
                 else
                 {
-                    blueTZ.Text = bluez;
+                    blueTZ.Text = bluez + ReturnMinutes(tParams[0]);
                 }
             }
             else
@@ -149,11 +161,11 @@ namespace TimeShiftApp
             {
                 if (TimeSpan.Parse(lightgreenz) > timeFrom && TimeSpan.Parse(lightgreenz) < timeTo)
                 {
-                    lgreenTZ.Text = TimeSpan.Parse(lightgreenz).Add(timeAdd).ToString(@"hh\:mm");
+                    lgreenTZ.Text = TimeSpan.Parse(lightgreenz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[1]);
                 }
                 else
                 {
-                    lgreenTZ.Text = lightgreenz;
+                    lgreenTZ.Text = lightgreenz + ReturnMinutes(tParams[1]);
                 }
             }
             else
@@ -165,11 +177,11 @@ namespace TimeShiftApp
             {
                 if (TimeSpan.Parse(greenz) > timeFrom && TimeSpan.Parse(greenz) < timeTo)
                 {
-                    greenTZ.Text = TimeSpan.Parse(greenz).Add(timeAdd).ToString(@"hh\:mm");
+                    greenTZ.Text = TimeSpan.Parse(greenz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[2]);
                 }
                 else
                 {
-                    greenTZ.Text = greenz;
+                    greenTZ.Text = greenz + ReturnMinutes(tParams[2]);
                 }
             }
             else
@@ -181,11 +193,11 @@ namespace TimeShiftApp
             {
                 if (TimeSpan.Parse(yellowz) > timeFrom && TimeSpan.Parse(yellowz) < timeTo)
                 {
-                    yellowTZ.Text = TimeSpan.Parse(yellowz).Add(timeAdd).ToString(@"hh\:mm");
+                    yellowTZ.Text = TimeSpan.Parse(yellowz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[3]);
                 }
                 else
                 {
-                    yellowTZ.Text = yellowz;
+                    yellowTZ.Text = yellowz + ReturnMinutes(tParams[3]);
                 }
             }
             else
@@ -197,11 +209,11 @@ namespace TimeShiftApp
             {
                 if (TimeSpan.Parse(orangez) > timeFrom && TimeSpan.Parse(orangez) < timeTo)
                 {
-                    orangeTZ.Text = TimeSpan.Parse(orangez).Add(timeAdd).ToString(@"hh\:mm");
+                    orangeTZ.Text = TimeSpan.Parse(orangez).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[4]);
                 }
                 else
                 {
-                    orangeTZ.Text = orangez;
+                    orangeTZ.Text = orangez + ReturnMinutes(tParams[4]);
                 }
             }
             else
@@ -213,11 +225,11 @@ namespace TimeShiftApp
             {
                 if (TimeSpan.Parse(redz) > timeFrom && TimeSpan.Parse(redz) < timeTo)
                 {
-                    redTZ.Text = TimeSpan.Parse(redz).Add(timeAdd).ToString(@"hh\:mm");
+                    redTZ.Text = TimeSpan.Parse(redz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[5]);
                 }
                 else
                 {
-                    redTZ.Text = redz;
+                    redTZ.Text = redz + ReturnMinutes(tParams[5]);
                 }
             }
             else
@@ -229,11 +241,11 @@ namespace TimeShiftApp
             {
                 if (TimeSpan.Parse(grayz) > timeFrom && TimeSpan.Parse(grayz) < timeTo)
                 {
-                    grayTZ.Text = TimeSpan.Parse(grayz).Add(timeAdd).ToString(@"hh\:mm");
+                    grayTZ.Text = TimeSpan.Parse(grayz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[6]);
                 }
                 else
                 {
-                    grayTZ.Text = grayz;
+                    grayTZ.Text = grayz + ReturnMinutes(tParams[6]);
                 }
             }
             else
