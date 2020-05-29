@@ -67,7 +67,7 @@ namespace TimeShiftApp
 
 
                 //string name = ((Button)sender).Name;
-                //вычисляем оттяжку на доставку    
+                //вычисляем оттяжку на вынос    
                 double TADelay = DBselect.CalculateDelay(connstr, zname, selectDDelays + zname + "'").Result;
                 //double TADelay = DBselect.CalculateDelay(connstr, zname, selectTADelays + zname + "'").Result;
                 //вычисляем время для цветовой зоны и добавляем время оттяжки если оно есть
