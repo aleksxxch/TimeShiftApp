@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+using System;
+using System.Drawing;
 using System.Net;
 using System.Net.Http;
-
-using Newtonsoft.Json;
-using System.Drawing;
 
 
 namespace TimeShiftApp
@@ -23,9 +18,17 @@ namespace TimeShiftApp
         public void getAtcStatus(string opernum)
         {
             WebClient wcl = new WebClient();
-            string getstring = wcl.DownloadString("http://192.168.10.5:8070/widget/operator/status/" + opernum);
-            dynamic dobj = JsonConvert.DeserializeObject<dynamic>(getstring);
-            string status = dobj["status"].ToString();
+            string status;
+            try
+            {
+                string getstring = wcl.DownloadString("http://192.168.10.5:8070/widget/operator/status/" + opernum);
+                dynamic dobj = JsonConvert.DeserializeObject<dynamic>(getstring);
+                status = dobj["status"].ToString();
+            }
+            catch(Exception ex)
+            {
+                status = "INVALID";
+            }
             switch (status)
             {
                 case "UNKNOWN":
@@ -89,6 +92,7 @@ namespace TimeShiftApp
                     this.stringCol = Color.Peru;
                     this.flag = 0;
                     break;
+                
             }
 
 

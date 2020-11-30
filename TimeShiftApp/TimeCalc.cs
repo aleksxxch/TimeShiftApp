@@ -8,6 +8,9 @@ namespace TimeShiftApp//Функции округления времени дл�
         public static TimeSpan timeFrom = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeFromHour")), Convert.ToInt32(Form1.ReadS("timeFromMinutes")), 0);
         public static TimeSpan timeTo = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeToHour")), Convert.ToInt32(Form1.ReadS("timeToMinutes")), 0);
 
+        public static DateTime timeFromString = Convert.ToDateTime(Form1.ReadS("timeFromHour")+":"+Form1.ReadS("timeFromMinutes")+":00");
+        public static DateTime timeToString = Convert.ToDateTime(Form1.ReadS("timeToHour") + ":" + Form1.ReadS("timeToMinutes") + ":00");
+
         public static String CalculateNear(DateTime tempTime, int h_shift, int m_shift, int n_shift)
         {
 
@@ -17,7 +20,11 @@ namespace TimeShiftApp//Функции округления времени дл�
                 m_shift = m_shift + Convert.ToInt32(Form1.ReadS("MinutesToAdd"));
             }*/
 
-
+            /*if(tempTime > timeFromString && tempTime < timeToString)
+            {
+                tempTime.AddHours(Convert.ToInt32(Form1.ReadS("timeAddHour")));
+                tempTime.AddMinutes(Convert.ToInt32(Form1.ReadS("timeAddMinutes")));
+            }*/
 
             String TS;
 

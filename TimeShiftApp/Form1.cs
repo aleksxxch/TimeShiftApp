@@ -12,11 +12,11 @@ using System.Configuration;
 using System.Collections.Specialized;
 using System.IO;
 using System.Media;
+using Squirrel;
+using System.Diagnostics;
 
 namespace TimeShiftApp
 {
-    
-
     public partial class Form1 : Form
     {
         public int panel2_statusFlag = 0,
@@ -55,6 +55,11 @@ namespace TimeShiftApp
             }
         }
 
+        /// <summary>
+        /// Reads a key value string from App.config file to retreive a value
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string ReadS(string key)
         {
             try
@@ -112,7 +117,7 @@ namespace TimeShiftApp
 
             string whenStops = DateTime.Now.ToString("yyyy-MM-dd");
 
-            ListTimes = DBselect.CalculateTimes(connstr, zname, selectTimes + zname + "' and DateofStop='" + whenStops + "' order by Time").Result;
+            ListTimes = DBselect.CalculateTimes(connstr, zname, selectTimes + zname + "' and DateofStop>='" + whenStops + "' order by DateOfStop,Time").Result;
             ListDish = DBselect.SelectDishStops(connstr, zname, selectDishes + zname + "'order by Dish").Result;
             ListOffers = DBselect.SelectOffers(connstr, zname, selectOffers + oname + "'").Result;
 
@@ -129,9 +134,9 @@ namespace TimeShiftApp
 
             }
             
-            TimeSpan timeFrom = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeFromHour")), Convert.ToInt32(Form1.ReadS("timeFromMinutes")), 0);
-            TimeSpan timeTo = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeToHour")), Convert.ToInt32(Form1.ReadS("timeToMinutes")), 0);
-            TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(Form1.ReadS("timeAddHour")), Convert.ToInt32(Form1.ReadS("timeAddMinutes")), 0);
+            TimeSpan timeFrom = new TimeSpan(Convert.ToInt32(ReadS("timeFromHour")), Convert.ToInt32(ReadS("timeFromMinutes")), 0);
+            TimeSpan timeTo = new TimeSpan(Convert.ToInt32(ReadS("timeToHour")), Convert.ToInt32(ReadS("timeToMinutes")), 0);
+            TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(ReadS("timeAddHour")), Convert.ToInt32(ReadS("timeAddMinutes")), 0);
 
             bluez = CalculateFinal.CalcBlueZoneTime(TZ, tParams[0], tParams[7], zname, ListTimes).Result;
             lightgreenz = CalculateFinal.CalcZoneTime(TZ, tParams[1], tParams[7], zname, ListTimes).Result;
@@ -141,16 +146,12 @@ namespace TimeShiftApp
             redz = CalculateFinal.CalcZoneTime(TZ, tParams[5], tParams[7], zname, ListTimes).Result;
             grayz = CalculateFinal.CalcZoneTime(TZ, tParams[6], tParams[7], zname, ListTimes).Result;
 
+            
             if (bluez != "")
             {
-                if (TimeSpan.Parse(bluez) > timeFrom && TimeSpan.Parse(bluez) < timeTo)
-                {
-                    blueTZ.Text = TimeSpan.Parse(bluez).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[0]);
-                }
-                else
-                {
+                
                     blueTZ.Text = bluez + ReturnMinutes(tParams[0]);
-                }
+                
             }
             else
             {
@@ -159,14 +160,9 @@ namespace TimeShiftApp
 
             if (lightgreenz != "")
             {
-                if (TimeSpan.Parse(lightgreenz) > timeFrom && TimeSpan.Parse(lightgreenz) < timeTo)
-                {
-                    lgreenTZ.Text = TimeSpan.Parse(lightgreenz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[1]);
-                }
-                else
-                {
+                
                     lgreenTZ.Text = lightgreenz + ReturnMinutes(tParams[1]);
-                }
+                
             }
             else
             {
@@ -175,14 +171,9 @@ namespace TimeShiftApp
 
             if (greenz != "")
             {
-                if (TimeSpan.Parse(greenz) > timeFrom && TimeSpan.Parse(greenz) < timeTo)
-                {
-                    greenTZ.Text = TimeSpan.Parse(greenz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[2]);
-                }
-                else
-                {
+                
                     greenTZ.Text = greenz + ReturnMinutes(tParams[2]);
-                }
+                
             }
             else
             {
@@ -191,14 +182,9 @@ namespace TimeShiftApp
 
             if (yellowz != "")
             {
-                if (TimeSpan.Parse(yellowz) > timeFrom && TimeSpan.Parse(yellowz) < timeTo)
-                {
-                    yellowTZ.Text = TimeSpan.Parse(yellowz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[3]);
-                }
-                else
-                {
+                
                     yellowTZ.Text = yellowz + ReturnMinutes(tParams[3]);
-                }
+                
             }
             else
             {
@@ -207,14 +193,9 @@ namespace TimeShiftApp
 
             if (orangez != "")
             {
-                if (TimeSpan.Parse(orangez) > timeFrom && TimeSpan.Parse(orangez) < timeTo)
-                {
-                    orangeTZ.Text = TimeSpan.Parse(orangez).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[4]);
-                }
-                else
-                {
+                
                     orangeTZ.Text = orangez + ReturnMinutes(tParams[4]);
-                }
+                
             }
             else
             {
@@ -223,14 +204,9 @@ namespace TimeShiftApp
 
             if (redz != "")
             {
-                if (TimeSpan.Parse(redz) > timeFrom && TimeSpan.Parse(redz) < timeTo)
-                {
-                    redTZ.Text = TimeSpan.Parse(redz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[5]);
-                }
-                else
-                {
+                
                     redTZ.Text = redz + ReturnMinutes(tParams[5]);
-                }
+                
             }
             else
             {
@@ -239,14 +215,9 @@ namespace TimeShiftApp
 
             if (grayz != "")
             {
-                if (TimeSpan.Parse(grayz) > timeFrom && TimeSpan.Parse(grayz) < timeTo)
-                {
-                    grayTZ.Text = TimeSpan.Parse(grayz).Add(timeAdd).ToString(@"hh\:mm") + ReturnMinutes(tParams[6]);
-                }
-                else
-                {
+               
                     grayTZ.Text = grayz + ReturnMinutes(tParams[6]);
-                }
+               
             }
             else
             {
@@ -254,14 +225,14 @@ namespace TimeShiftApp
             }
 
 
-            /*blueTZ.Text = 
-            lgreenTZ.Text = 
+            /*blueTZ.Text = bluez + ReturnMinutes(tParams[0]);
+            lgreenTZ.Text = lightgreenz + ReturnMinutes(tParams[1]);
             //lgreenTZ.Text = "";
-            greenTZ.Text = 
-            yellowTZ.Text = 
-            orangeTZ.Text = 
-            redTZ.Text = 
-            grayTZ.Text =*/ 
+            greenTZ.Text = greenz + ReturnMinutes(tParams[2]);
+            yellowTZ.Text = yellowz + ReturnMinutes(tParams[3]);
+            orangeTZ.Text = orangez + ReturnMinutes(tParams[4]);
+            redTZ.Text = redz + ReturnMinutes(tParams[5]);
+            grayTZ.Text = grayz + ReturnMinutes(tParams[6]);*/
 
 
 
@@ -289,13 +260,12 @@ namespace TimeShiftApp
             }
 
         }
-
         
-
         public Form1()
         {
-            
             InitializeComponent();
+            CheckForUpdates();
+            AddVersionNumber();
 
             panel2.Width = 12;
             this.Width = 156;
@@ -314,6 +284,22 @@ namespace TimeShiftApp
             timer3.Start();
         }
 
+        private async Task CheckForUpdates()
+        {
+            string path = ReadS("UpdatePath");
+            using (var manager = new UpdateManager(path))
+            {
+                await manager.UpdateApp();
+            }
+        }
+
+        private void AddVersionNumber()
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo versioninfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+            this.Text += $" версия v.{versioninfo.FileVersion}";
+        }
+
         private void Плаза_Click(object sender, EventArgs e)
         {
             string[] tParams = new string[] { ReadS("PlightBlue"), ReadS("PlightGreen"), ReadS("PGreen"), ReadS("PYellow"), ReadS("POrange"), ReadS("PRed"), ReadS("PGray"), ReadS("nn"), ReadS("PTaway"), ReadS("ta_nn") };
@@ -330,9 +316,9 @@ namespace TimeShiftApp
 
         private void Маерчака_Click(object sender, EventArgs e)
         {
-            string[] tParams = new string[] { ReadS("PlightBlue"), ReadS("PlightGreen"), ReadS("PGreen"), ReadS("PYellow"), ReadS("POrange"), ReadS("PRed"), ReadS("PGray"), ReadS("nn"), ReadS("PTaway"), ReadS("ta_nn") };
-            string oname = "Перцы";
-            GetAllInfo(sender, tParams, oname);
+            //string[] tParams = new string[] { ReadS("PlightBlue"), ReadS("PlightGreen"), ReadS("PGreen"), ReadS("PYellow"), ReadS("POrange"), ReadS("PRed"), ReadS("PGray"), ReadS("nn"), ReadS("PTaway"), ReadS("ta_nn") };
+            //string oname = "Перцы";
+            //GetAllInfo(sender, tParams, oname);
         }
 
         private void Пушкина_Click(object sender, EventArgs e)
@@ -349,7 +335,7 @@ namespace TimeShiftApp
             GetAllInfo(sender, tParams, oname);
         }
 
-        private void Гладкова_Click(object sender, EventArgs e)
+        private void Карамзина_Click(object sender, EventArgs e)
         {
             string[] tParams = new string[] { ReadS("PlightBlue"), ReadS("PlightGreen"), ReadS("PGreen"), ReadS("PYellow"), ReadS("POrange"), ReadS("PRed"), ReadS("PGray"), ReadS("nn"), ReadS("PTaway"), ReadS("ta_nn") };
             string oname = "Перцы";
@@ -487,6 +473,23 @@ namespace TimeShiftApp
             timer3.Start();
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Visible = true;
+            dishStops.Visible = false;
+            label6.ForeColor = Color.Brown;
+            label7.ForeColor = Color.Linen;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Visible = false;
+            dishStops.Visible = true;
+            label6.ForeColor = Color.Linen;
+            label7.ForeColor = Color.Brown;
+        }
+                
+
         private void label12_Click(object sender, EventArgs e)
         {
             if (label12.Text=="Скрыть акции")
@@ -508,17 +511,13 @@ namespace TimeShiftApp
         {
             timeStops.Items.Clear();
             List<string> List = new List<string>();
-            List=DBselect.CalculateTimes(connstr, label11.Text, selectTimes + label11.Text + "' and DateofStop='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' order by Time").Result;
+            List=DBselect.CalculateTimes(connstr, label11.Text, selectTimes + label11.Text + "' and DateofStop>='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' order by DateofStop,Time").Result;
             foreach(string s in List)
             {
                 timeStops.Items.Add(s);
             }
         }
-
         
-
-        
-
         public void TimeWindowResize()
         {
             timer1.Enabled = true;

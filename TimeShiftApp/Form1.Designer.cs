@@ -35,7 +35,7 @@
             this.Мамас = new System.Windows.Forms.Button();
             this.Ромбаба = new System.Windows.Forms.Button();
             this.Якитория = new System.Windows.Forms.Button();
-            this.Гладкова = new System.Windows.Forms.Button();
+            this.Карамзина = new System.Windows.Forms.Button();
             this.Правый = new System.Windows.Forms.Button();
             this.Мира = new System.Windows.Forms.Button();
             this.Пушкина = new System.Windows.Forms.Button();
@@ -56,7 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tawayTZ = new System.Windows.Forms.TextBox();
-            this.okButton = new TimeShiftApp.RoundButton();
             this.greenTZ = new System.Windows.Forms.TextBox();
             this.timeStops = new System.Windows.Forms.ListBox();
             this.grayTZ = new System.Windows.Forms.TextBox();
@@ -68,14 +67,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.delay_label = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.curTime = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.restName = new System.Windows.Forms.Label();
-            this.offersList = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dishStops = new System.Windows.Forms.ListBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.offersList = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
@@ -86,6 +85,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pauseButton = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
+            this.okButton = new TimeShiftApp.RoundButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -187,24 +187,24 @@
             this.Якитория.UseVisualStyleBackColor = false;
             this.Якитория.Click += new System.EventHandler(this.Якитория_Click);
             // 
-            // Гладкова
+            // Карамзина
             // 
-            this.Гладкова.BackColor = System.Drawing.Color.Cornsilk;
-            this.Гладкова.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Гладкова.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Гладкова.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.Гладкова.FlatAppearance.BorderSize = 2;
-            this.Гладкова.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Гладкова.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Гладкова.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Гладкова.Font = new System.Drawing.Font("Liberation Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Гладкова.Location = new System.Drawing.Point(2, 190);
-            this.Гладкова.Name = "Гладкова";
-            this.Гладкова.Size = new System.Drawing.Size(128, 33);
-            this.Гладкова.TabIndex = 5;
-            this.Гладкова.Text = "Гладкова";
-            this.Гладкова.UseVisualStyleBackColor = false;
-            this.Гладкова.Click += new System.EventHandler(this.Гладкова_Click);
+            this.Карамзина.BackColor = System.Drawing.Color.Cornsilk;
+            this.Карамзина.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Карамзина.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Карамзина.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.Карамзина.FlatAppearance.BorderSize = 2;
+            this.Карамзина.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Карамзина.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Карамзина.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Карамзина.Font = new System.Drawing.Font("Liberation Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Карамзина.Location = new System.Drawing.Point(2, 66);
+            this.Карамзина.Name = "Карамзина";
+            this.Карамзина.Size = new System.Drawing.Size(128, 33);
+            this.Карамзина.TabIndex = 5;
+            this.Карамзина.Text = "Карамзина";
+            this.Карамзина.UseVisualStyleBackColor = false;
+            this.Карамзина.Click += new System.EventHandler(this.Карамзина_Click);
             // 
             // Правый
             // 
@@ -274,11 +274,10 @@
             this.Маерчака.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Маерчака.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Маерчака.Font = new System.Drawing.Font("Liberation Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Маерчака.Location = new System.Drawing.Point(2, 66);
+            this.Маерчака.Location = new System.Drawing.Point(2, 191);
             this.Маерчака.Name = "Маерчака";
             this.Маерчака.Size = new System.Drawing.Size(128, 33);
             this.Маерчака.TabIndex = 9;
-            this.Маерчака.Text = "Маерчака";
             this.Маерчака.UseVisualStyleBackColor = false;
             this.Маерчака.Click += new System.EventHandler(this.Маерчака_Click);
             // 
@@ -351,7 +350,7 @@
             this.panel1.Controls.Add(this.Маерчака);
             this.panel1.Controls.Add(this.Якитория);
             this.panel1.Controls.Add(this.Пушкина);
-            this.panel1.Controls.Add(this.Гладкова);
+            this.panel1.Controls.Add(this.Карамзина);
             this.panel1.Controls.Add(this.Мира);
             this.panel1.Controls.Add(this.Правый);
             this.panel1.Controls.Add(this.Коко);
@@ -518,22 +517,6 @@
             this.tawayTZ.Text = "00:00";
             this.tawayTZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // okButton
-            // 
-            this.okButton.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.okButton.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen;
-            this.okButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.okButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.okButton.Font = new System.Drawing.Font("Mistral", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.okButton.Location = new System.Drawing.Point(19, 287);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(80, 46);
-            this.okButton.TabIndex = 9;
-            this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = false;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
-            // 
             // greenTZ
             // 
             this.greenTZ.BackColor = System.Drawing.Color.SeaGreen;
@@ -632,14 +615,14 @@
             // 
             this.panel3.Controls.Add(this.delay_label);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.richTextBox1);
             this.panel3.Controls.Add(this.curTime);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.restName);
-            this.panel3.Controls.Add(this.offersList);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.dishStops);
+            this.panel3.Controls.Add(this.richTextBox1);
+            this.panel3.Controls.Add(this.offersList);
             this.panel3.Location = new System.Drawing.Point(147, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(376, 589);
@@ -662,22 +645,13 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.DeepPink;
-            this.label12.Location = new System.Drawing.Point(74, 222);
+            this.label12.Location = new System.Drawing.Point(277, 24);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(99, 17);
             this.label12.TabIndex = 9;
             this.label12.Text = "Скрыть акции";
+            this.label12.Visible = false;
             this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Book Antiqua", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.Maroon;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 242);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(367, 344);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
             // 
             // curTime
             // 
@@ -694,7 +668,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(243, 224);
+            this.label11.Location = new System.Drawing.Point(313, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 6;
@@ -712,6 +686,55 @@
             this.restName.TabIndex = 5;
             this.restName.Text = "--------";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.Brown;
+            this.label7.Location = new System.Drawing.Point(174, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Акции";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.Linen;
+            this.label6.Location = new System.Drawing.Point(4, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(146, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Блюда на стопе";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // dishStops
+            // 
+            this.dishStops.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dishStops.ForeColor = System.Drawing.Color.Maroon;
+            this.dishStops.FormattingEnabled = true;
+            this.dishStops.HorizontalScrollbar = true;
+            this.dishStops.ItemHeight = 24;
+            this.dishStops.Location = new System.Drawing.Point(6, 44);
+            this.dishStops.Name = "dishStops";
+            this.dishStops.Size = new System.Drawing.Size(367, 532);
+            this.dishStops.Sorted = true;
+            this.dishStops.TabIndex = 0;
+            this.dishStops.SelectedIndexChanged += new System.EventHandler(this.dishStops_SelectedIndexChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Book Antiqua", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.Maroon;
+            this.richTextBox1.Location = new System.Drawing.Point(6, 44);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(367, 532);
+            this.richTextBox1.TabIndex = 8;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
+            // 
             // offersList
             // 
             this.offersList.BackColor = System.Drawing.SystemColors.Desktop;
@@ -722,49 +745,13 @@
             this.offersList.HorizontalExtent = 1200;
             this.offersList.HorizontalScrollbar = true;
             this.offersList.ItemHeight = 17;
-            this.offersList.Location = new System.Drawing.Point(3, 242);
+            this.offersList.Location = new System.Drawing.Point(2, 418);
             this.offersList.Name = "offersList";
             this.offersList.ScrollAlwaysVisible = true;
             this.offersList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.offersList.Size = new System.Drawing.Size(367, 327);
+            this.offersList.Size = new System.Drawing.Size(367, 157);
             this.offersList.TabIndex = 4;
             this.offersList.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(3, 221);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Акции:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(219, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Блюда на стопе:";
-            // 
-            // dishStops
-            // 
-            this.dishStops.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dishStops.ForeColor = System.Drawing.Color.Maroon;
-            this.dishStops.FormattingEnabled = true;
-            this.dishStops.HorizontalScrollbar = true;
-            this.dishStops.ItemHeight = 24;
-            this.dishStops.Location = new System.Drawing.Point(3, 45);
-            this.dishStops.Name = "dishStops";
-            this.dishStops.Size = new System.Drawing.Size(367, 172);
-            this.dishStops.Sorted = true;
-            this.dishStops.TabIndex = 0;
-            this.dishStops.SelectedIndexChanged += new System.EventHandler(this.dishStops_SelectedIndexChanged);
             // 
             // timer1
             // 
@@ -846,6 +833,22 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_ClickAsync);
             // 
+            // okButton
+            // 
+            this.okButton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.okButton.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.okButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.okButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.okButton.Font = new System.Drawing.Font("Mistral", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.okButton.Location = new System.Drawing.Point(19, 287);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(80, 46);
+            this.okButton.TabIndex = 9;
+            this.okButton.Text = "OK";
+            this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -866,7 +869,6 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(16, 39);
             this.Name = "Form1";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TimeShiftApp";
             this.TopMost = true;
@@ -888,7 +890,7 @@
         private System.Windows.Forms.Button Мамас;
         private System.Windows.Forms.Button Ромбаба;
         private System.Windows.Forms.Button Якитория;
-        private System.Windows.Forms.Button Гладкова;
+        private System.Windows.Forms.Button Карамзина;
         private System.Windows.Forms.Button Правый;
         private System.Windows.Forms.Button Мира;
         private System.Windows.Forms.Button Пушкина;
